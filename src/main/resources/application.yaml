@@ -1,0 +1,22 @@
+quarkus:
+  package:
+    jar:
+      type: fast-jar
+  log:
+    file:
+      enabled: true
+      path: "logs/mcp-server.log"
+      level: "INFO"
+      rotation:
+        max-file-size: "10M"
+        max-backup-index: 3
+    console:
+      enabled: false
+
+"%test":
+  quarkus:
+    log:
+      console:
+        enabled: true
+        level: "INFO"
+        format: "%d{HH:mm:ss} %-5p [%c{2.}] (%t) %s%e%n"
